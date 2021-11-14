@@ -29,13 +29,13 @@ function App() {
       }
     };
 
+    const saveLocalTodos = () => {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    };
+
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
-
-  const saveLocalTodos = () => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };
 
   const getLocalTodos = () => {
     if (localStorage.getItem("todos") === null) {
